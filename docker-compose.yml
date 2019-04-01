@@ -1,0 +1,21 @@
+version: '3'
+services:
+  db:
+    image: "postgres:11-alpine"
+    restart: always
+    ports:
+      - "5432:5432"
+    env_file:
+      - config/db.env
+  web:
+    build: .
+    ports:
+      - "1337:1337"
+    depends_on:
+      - db
+    links:
+      - db
+    env_file:
+      - config/server.env
+      - config/api.env
+      - config/db.env

@@ -1,0 +1,6 @@
+FROM golang:1.12.0
+RUN mkdir /src
+WORKDIR /src
+ADD . .
+EXPOSE 1337
+CMD ["go", "test", "-v", "./..."]

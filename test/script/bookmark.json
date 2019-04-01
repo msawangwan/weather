@@ -1,0 +1,11 @@
+{
+    "username": "foobar",
+    "locations": [
+        "France",
+        "London",
+        "Budapest",
+        "Miami",
+        "San Francisco",
+        "Portland"
+    ]
+}

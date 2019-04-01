@@ -1,0 +1,42 @@
+{
+    "coord": {
+        "lon": -119.81,
+        "lat": 39.53
+    },
+    "weather": [
+        {
+            "id": 801,
+            "main": "Clouds",
+            "description": "few clouds",
+            "icon": "02d"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 276.8,
+        "pressure": 1027,
+        "humidity": 60,
+        "temp_min": 272.59,
+        "temp_max": 279.82
+    },
+    "visibility": 16093,
+    "wind": {
+        "speed": 1.5,
+        "deg": 40
+    },
+    "clouds": {
+        "all": 20
+    },
+    "dt": 1553962697,
+    "sys": {
+        "type": 1,
+        "id": 5689,
+        "message": 0.0061,
+        "country": "US",
+        "sunrise": 1553953604,
+        "sunset": 1553998826
+    },
+    "id": 5511077,
+    "name": "Reno",
+    "cod": 200
+}

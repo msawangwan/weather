@@ -1,0 +1,42 @@
+{
+    "coord": {
+        "lon": 100.49,
+        "lat": 13.75
+    },
+    "weather": [
+        {
+            "id": 801,
+            "main": "Clouds",
+            "description": "few clouds",
+            "icon": "02n"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 302.87,
+        "pressure": 1010,
+        "humidity": 79,
+        "temp_min": 302.59,
+        "temp_max": 303.15
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 4.1,
+        "deg": 200
+    },
+    "clouds": {
+        "all": 20
+    },
+    "dt": 1553962219,
+    "sys": {
+        "type": 1,
+        "id": 9235,
+        "message": 0.005,
+        "country": "TH",
+        "sunrise": 1553901340,
+        "sunset": 1553945368
+    },
+    "id": 1609350,
+    "name": "Bangkok",
+    "cod": 200
+}

@@ -1,0 +1,42 @@
+{
+    "coord": {
+        "lon": -122.42,
+        "lat": 37.78
+    },
+    "weather": [
+        {
+            "id": 721,
+            "main": "Haze",
+            "description": "haze",
+            "icon": "50d"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 284.82,
+        "pressure": 1025,
+        "humidity": 76,
+        "temp_min": 282.59,
+        "temp_max": 286.48
+    },
+    "visibility": 9656,
+    "wind": {
+        "speed": 1.51,
+        "deg": 303.515
+    },
+    "clouds": {
+        "all": 1
+    },
+    "dt": 1553962867,
+    "sys": {
+        "type": 1,
+        "id": 4322,
+        "message": 0.0082,
+        "country": "US",
+        "sunrise": 1553954281,
+        "sunset": 1553999400
+    },
+    "id": 5391959,
+    "name": "San Francisco",
+    "cod": 200
+}
