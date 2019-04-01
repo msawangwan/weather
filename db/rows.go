@@ -401,26 +401,10 @@ func MonthlyTemperature(f TemperatureQueryFilter) (LocationTemperatureQueryResul
 
 		temps.InitialiseForDate(city, y, mo, d)
 
-		// if _, initialised := temps[city]; !initialised {
-		// 	temps[city] = YearlyTemperatureQuery{}
-		// }
-		// if _, initialised := temps[city][y]; !initialised {
-		// 	temps[city][y] = MonthlyTemperatureQuery{}
-		// }
-
-		// if _, initialised := temps[city][y][mo]; !initialised {
-		// 	temps[city][y][mo] = DailyTemperatureQuery{}
-		// }
-
-		// if _, initialised := temps[city][y][mo][d]; !initialised {
-		// 	temps[city][y][mo][d] = TemperatureQueries{}
-		// }
-
 		if !temp.Valid {
 			continue
 		}
 
-		// temps[city][y][mo][d] = append(temps[city][y][mo][d], temp.Float64)
 		temps.Add(temp.Float64, city, y, mo, d)
 	}
 
@@ -447,7 +431,6 @@ func MonthlyAverageTemperature(months ...string) (LocationTemperatureQueryResult
 		return nil, err
 	}
 
-	// temps := monthlyReport{}
 	dailyAvgTemps := LocationTemperatureQueryResult{}
 
 	for rows.Next() {
@@ -475,31 +458,16 @@ func MonthlyAverageTemperature(months ...string) (LocationTemperatureQueryResult
 
 		dailyAvgTemps.InitialiseForDate(city, y, mo, d)
 
-		// if _, initialised := dailyAvgTemps[city]; !initialised {
-		// 	dailyAvgTemps[city] = map[int]map[int]map[int][]float64{}
-		// }
-		// if _, initialised := dailyAvgTemps[city][y]; !initialised {
-		// 	dailyAvgTemps[city][y] = map[int]map[int][]float64{}
-		// }
-		// if _, initialised := dailyAvgTemps[city][y][mo]; !initialised {
-		// 	dailyAvgTemps[city][y][mo] = map[int][]float64{}
-		// }
-		// if _, initialised := dailyAvgTemps[city][y][mo][d]; !initialised {
-		// 	dailyAvgTemps[city][y][mo][d] = []float64{}
-		// }
-
 		if !templo.Valid || !temphi.Valid {
 			continue
 		}
 
 		mid := (templo.Float64 + temphi.Float64) / 2
 
-		// temps[city][y][mo][d] = append(temps[city][y][mo][d], mid)
 		dailyAvgTemps.Add(mid, city, y, mo, d)
 	}
 
 	monthlyAvgTemps := LocationTemperatureQueryResult{}
-	// monthlyAvgTemps := monthlyReport{}
 
 	for c, cities := range dailyAvgTemps {
 		for y, year := range cities {
@@ -522,10 +490,6 @@ func MonthlyAverageTemperature(months ...string) (LocationTemperatureQueryResult
 				avg /= float64(samplesPerDay)
 				avg /= float64(samplesPerMonth)
 
-				// monthlyAvgTemps[c] = make(map[int]map[int]map[int][]float64)
-				// monthlyAvgTemps[c][y] = make(map[int]map[int][]float64)
-				// monthlyAvgTemps[c][y][m] = make(map[int][]float64)
-				// monthlyAvgTemps[c][y][m][0] = []float64{avg}
 				monthlyAvgTemps.InitialiseForDate(c, y, m, 0)
 				monthlyAvgTemps.Add(avg, c, y, m, 0)
 			}
