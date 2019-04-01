@@ -87,6 +87,15 @@ func ReportLocationWeather(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
+		if location.Cod != 200 {
+			if location.Message != nil {
+				sendMessage(w, *location.Message)
+			} else {
+				sendMessage(w, "failed to communicate with the openweather api: unknown reason")
+			}
+			return
+		}
+
 		tempMin := location.Main.TempMin
 		tempMax := location.Main.TempMax
 		labels := location.WeatherLabels()

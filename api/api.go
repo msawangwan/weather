@@ -56,6 +56,8 @@ type Location struct {
 	Clouds  *clouds     `json:"clouds,omitempty"`
 
 	Coord *coordinate `json:"coord,omitempty"`
+
+	Message *string `json:"message,omitempty"`
 }
 
 // WeatherLabels returns all the different weather types at a location
