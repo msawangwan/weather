@@ -65,6 +65,16 @@ if all that is in order and the database is running, then:
 ~$ go run main.go
 ```
 
+**usage**
+
+the service defaults to listening on port `1337`. to verify you can talk to the thing just:
+
+```
+~$ curl -v localhost:1337/api/v1/status
+```
+
+alternatively, just plug `localhost:1337/api/v1/status` into your browser.
+
 ## **endpoints**
 
 **user info**
